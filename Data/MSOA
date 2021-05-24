@@ -1,1 +1,15 @@
-
+1）疫情数据：
+伦敦msoa每天：msoa_E1200007 https://coronavirus.data.gov.uk/details/download
+伦敦msoa3.1-7.31每月+5个月：rederencetables1
+https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsinvolvingcovid19bylocalareaanddeprivation
+covid-19死亡映射，伦敦：
+https://data.london.gov.uk/dataset/covid-19-deaths-mapping-tool
+msoa每月死亡人数：covidlocalareadeprivationapril2021
+https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsduetocovid19bylocalareaanddeprivation
+2）剥夺指数：已转化为MSOA
+https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019
+3）socio-demographic：总族bame，老年人占比，人口密度，房价中位数，学历，收入剥夺指数
+https://data.london.gov.uk/dataset/msoa-atlas
+问题：
+1）时间段划分：第一次lockdown，第二次lockdown
+2) x剥夺指数？
