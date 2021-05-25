@@ -1,16 +1,22 @@
-1）疫情数据：
-伦敦msoa每天：msoa_E1200007 https://coronavirus.data.gov.uk/details/download
-伦敦msoa3.1-7.31每月+5个月：rederencetables1
-https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsinvolvingcovid19bylocalareaanddeprivation
-covid-19死亡映射，伦敦：
-https://data.london.gov.uk/dataset/covid-19-deaths-mapping-tool
-msoa每月死亡人数：covidlocalareadeprivationapril2021
-https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsduetocovid19bylocalareaanddeprivation
-2）剥夺指数：已转化为MSOA
-https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019
-3）socio-demographic：总族bame，老年人占比，人口密度，房价中位数，学历，收入剥夺指数
-https://data.london.gov.uk/dataset/msoa-atlas
-
-问题：
-1）时间段划分：第一次lockdown，第二次lockdown
-2) x剥夺指数？
+## Data  
+### 1. Progress: All data are unified at MSOA level, but the data selection range has not yet been determined  
+### 2. Three types of datasets  
+#### 2.1 Covid-19 data:  
+1) London msoa, every day: msoa_E1200007 https://coronavirus.data.gov.uk/details/download  
+2) London msoa, 3.1-7.31 per month + 5 months: rederencetables1  
+https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsinvolvingcovid19bylocalareaanddeprivation  
+3) Covid-19 death mapping, London: https://data.london.gov.uk/dataset/covid-19-deaths-mapping-tool  
+4) The number of deaths per month in msoa: covidlocalareadeprivationapril2021  
+https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsduetocovid19bylocalareaanddeprivation 
+#### 2.2 Deprivation Index (converted to MSOA): MSOA IBM  
+https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019  
+#### 2.3 socio-demographic: ethnic bame, proportion of the elderly, population density, median house price, education background, income deprivation index, etc.  
+https://data.london.gov.uk/dataset/msoa-atlas  
+### 1.3 Question:  
+1) Time period division: first lockdown, second lockdown, week? month?  
+The end time of each block is not clear  
+3.23-6.28?  
+November 5th -?  
+1.5-21.3.8  
+https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_Kingdom#Summer_2020:_Continued_restrictions_and_local_lockdowns
+2) x: Deprivation index? socio-demographic?  
