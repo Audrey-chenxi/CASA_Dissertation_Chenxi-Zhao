@@ -5,8 +5,8 @@
 -There has been a lot of research on covid-19 in London, but it is rarely detailed to specific areas(MSOA).   
 2) Research question + aim  
 3) Literature review  
--a-The overall situation of the global covid-19 + mortality rate + corresponding characteristics  
--b-The overall situation of the UK & London covid-19 + mortality rate+ corresponding characteristics  
+(1) The overall situation of the global covid-19 + mortality rate + corresponding characteristics  
+(2) The overall situation of the UK & London covid-19 + mortality rate+ corresponding characteristics  
 4) Presentation of data  
 5) Explanation of methodology  
 6) Presentation of results  
@@ -14,8 +14,8 @@
   UK epidemic policy at various time periods: https://www.honglingjin.co.uk/338580.html#2021%E5%B9%B45%E6%9C%88  
 -b-Different regions: the relationship between socio-demographic factors and mortality inequality. And how this relationship differed in two lockdowns  
 7) Discussion of results
--a- Covid-19 has improved and is expected to return to normal in June. There is still regional inequality in vaccine injections during this process
--b- Compare the overall situation in England and other health inequalities, analyze government policies, social phenomena and give some suggestions. Address inequalities in population health
+(1) Covid-19 has improved and is expected to return to normal in June. There is still regional inequality in vaccine injections during this process
+(2) Compare the overall situation in England and other health inequalities, analyze government policies, social phenomena and give some suggestions. Address inequalities in population health
 8) Conclusions
   
 ## 2.Data  
