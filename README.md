@@ -37,9 +37,9 @@ https://data.london.gov.uk/dataset/msoa-atlas
 ### 2.3 Question:  
 1) Time period division: first lockdown, second lockdown, week? month?  
 The end time of each block is not clear  
-3.23-5.17？6.28?  
+3.23-6.28?  
 November 5th -?  
-1.5-21.3.8  
+1.5-21.3.8  5.17？
 https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_Kingdom#Summer_2020:_Continued_restrictions_and_local_lockdowns
 2) x: Deprivation index? socio-demographic?  
 
