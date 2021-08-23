@@ -4,7 +4,7 @@ This repo is to store my dissertation file and present my disseration book
 
 ```
 - Code #the path of the reproducible analysis and map making
-- Dataset #the path of datasets
+- Data #the path of datasets
 - Image #the path of images
 ```
 
