@@ -1,0 +1,255 @@
+
+```{r}
+# environment prepare
+library(tidyverse)
+library(data.table)
+library(sp)
+library(sf)
+library(tm)
+library(here)
+library(sp)
+library(rgeos)
+library(tmap)
+library(sf)
+library(geojson)
+library(geojsonio)
+library(tmaptools)
+library(RColorBrewer)
+library(spdep) 
+library(lubridate)
+```
+
+```{r}
+# read data in R
+raw_data = read.csv("C:/Users/HUAWEI/Desktop/Dissertation/data_total.csv")
+# you can have a overview of this dataset
+print("The number of rows is: ")
+nrow(raw_data)
+print("The number of columns is: ")
+ncol(raw_data)
+print("all varriables are:")
+head(names(raw_data),n = 70)
+```
+
+```{r}
+# import spatial dataset
+London_MSOA = st_read("C:/Users/HUAWEI/Desktop/Dissertation/Data/ESRI/MSOA_2011_London_gen_MHW.shp")
+London_MSOA %>% head()
+```
+
+```{r}
+# plot the map
+plot(st_geometry(London_MSOA))
+```
+
+breaks
+```{r}
+cus_break = c(0,350,700,1050,1400,1750,2100,2450,2800,3150)
+```
+
+```{r}
+
+df = London_MSOA
+map_var = "Lockdown1"
+#spatial_var = "cases1"
+legend_name = "Case rate (lonckdown1)"
+title_name = "London case rate distribution of the first lockdown in 2020"
+
+L1 = tm_shape( df )+ 
+        tm_compass( north = 0,
+              type = "4star",
+#               text.size = 0.3,
+#               size = 5.5,
+              show.labels = TRUE,
+              cardinal.directions = c("N", "E", "S", "W"),
+              lwd = 1,
+              position = c("left","bottom"),
+              bg.color = NA,
+              bg.alpha = NA,
+              just = NA)+ 
+        tm_scale_bar(position=c("left", "bottom"),
+#                      text.size = 1.5
+                    )+ 
+#         tm_credits("Visualization by Zeqiang Fang",size=.6,position = c(.73, .0085),fontface = "bold")+ 
+        tm_fill(col = map_var,
+#               style="jenks",
+              palette = "YlOrBr",
+#               pal = viridis(10, direction = -1),
+              breaks = cus_break, 
+#               popup.vars=c(spatial_var, map_var),
+              title=legend_name,
+#               title.size = 1.5,
+              legend.hist = TRUE,
+              legend.hist.position = c("left", "bottom")
+              )+ 
+        tm_layout(main.title = "",main.title.size = .85,
+                 frame=FALSE,
+                 legend.outside =TRUE,
+                 legend.height = .5,
+                 legend.hist.width = 2.5,
+                 legend.hist.height = .5)+
+        labs(x="Case rate", 
+             y="Frequency")+
+        tm_borders(col = "#D2D2D2", lwd = .5, lty = "solid", alpha = NA)
+L1
+# save interactive plot
+#	tmap_save(L1, "C:/Users/HUAWEI/Desktop/Dissertation/Lockdown1.png",dpi=300)
+
+```
+
+
+```{r}
+
+df = London_MSOA
+map_var = "Lockdown2"
+#spatial_var = "cases2"
+legend_name = "Case rate (lonckdown2)"
+title_name = "London case rate distribution of the second lockdown in 2020"
+
+L2 = tm_shape( df )+ 
+        tm_compass( north = 0,
+              type = "4star",
+#               text.size = 0.3,
+#               size = 5.5,
+              show.labels = TRUE,
+              cardinal.directions = c("N", "E", "S", "W"),
+              lwd = 1,
+              position = c("left","bottom"),
+              bg.color = NA,
+              bg.alpha = NA,
+              just = NA)+ 
+        tm_scale_bar(position=c("left", "bottom"),
+#                      text.size = 1.5
+                    )+ 
+#         tm_credits("Visualization by Zeqiang Fang",size=.6,position = c(.73, .0085),fontface = "bold")+ 
+        tm_fill(col = map_var,
+#               style="jenks",
+              palette = "YlOrBr",
+#               pal = viridis(10, direction = -1),
+              breaks = cus_break, 
+#               popup.vars=c(spatial_var, map_var),
+              title=legend_name,
+#               title.size = 1.5,
+              legend.hist = TRUE,
+              legend.hist.position = c("left", "bottom")
+              )+ 
+        tm_layout(main.title = "",main.title.size = .85,
+                 frame=FALSE,
+                 legend.outside =TRUE,
+                 legend.height = .5,
+                 legend.hist.width = 2.5,
+                 legend.hist.height = .5)+
+        labs(x="Case rate", 
+             y="Frequency")+
+        tm_borders(col = "#D2D2D2", lwd = .5, lty = "solid", alpha = NA)
+L2
+# save interactive plot
+#	tmap_save(L2, "C:/Users/HUAWEI/Desktop/Dissertation/Lockdown2.png",dpi=300)
+
+```
+
+
+
+```{r}
+
+df = London_MSOA
+map_var = "Lockdown3"
+#spatial_var = "cases3"
+legend_name = "Case rate"
+title_name = "London case rate distribution of the first lockdown in 2020"
+
+L3 = tm_shape( df )+ 
+        tm_compass( north = 0,
+              type = "4star",
+#               text.size = 0.3,
+#               size = 5.5,
+              show.labels = TRUE,
+              cardinal.directions = c("N", "E", "S", "W"),
+              lwd = 1,
+              position = c("left","bottom"),
+              bg.color = NA,
+              bg.alpha = NA,
+              just = NA)+ 
+        tm_scale_bar(position=c("left", "bottom"),
+#                      text.size = 1.5
+                    )+ 
+#         tm_credits("Visualization by Zeqiang Fang",size=.6,position = c(.73, .0085),fontface = "bold")+ 
+        tm_fill(col = map_var,
+#               style="jenks",
+              palette = "YlOrBr",
+#               pal = viridis(10, direction = -1),
+              breaks = cus_break, 
+#               popup.vars=c(spatial_var, map_var),
+              title=legend_name,
+#               title.size = 1.5,
+              legend.hist = TRUE,
+              legend.hist.position = c("left", "bottom")
+              )+ 
+        tm_layout(main.title = "",main.title.size = .85,
+                 frame=FALSE,
+                 legend.outside =TRUE,
+                 legend.height = .5,
+                 legend.hist.width = 3.5,
+                 legend.hist.height = .5)+
+        labs(x="Case rate", 
+             y="Frequency")+
+        tm_borders(col = "#D2D2D2", lwd = .5, lty = "solid", alpha = NA)
+L3
+# save interactive plot
+#	tmap_save(L3, "C:/Users/HUAWEI/Desktop/Dissertation/Lockdown3无图标.png",dpi=300)
+
+```
+```{r}
+cus_break = c(0,0.052,0.079,0.099,0.135,0.164,0.192,0.222,0.263,0.342)
+```
+
+
+```{r}
+
+df = London_MSOA
+map_var = "Income"
+#spatial_var = "Income"
+legend_name = "Income"
+title_name = "Income distribution of London"
+
+Income = tm_shape( df )+ 
+        tm_compass( north = 0,
+              type = "4star",
+#               text.size = 0.3,
+#               size = 5.5,
+              show.labels = TRUE,
+              cardinal.directions = c("N", "E", "S", "W"),
+              lwd = 1,
+              position = c("left","bottom"),
+              bg.color = NA,
+              bg.alpha = NA,
+              just = NA)+ 
+        tm_scale_bar(position=c("left", "bottom"),
+#                      text.size = 1.5
+                    )+ 
+#         tm_credits("Visualization by Zeqiang Fang",size=.6,position = c(.73, .0085),fontface = "bold")+ 
+        tm_fill(col = map_var,
+#               style="jenks",
+              palette = "-YlOrBr",
+#               pal = viridis(10, direction = -1),
+              breaks = cus_break, 
+#               popup.vars=c(spatial_var, map_var),
+              title=legend_name,
+#               title.size = 1.5,
+              legend.hist = TRUE,
+              legend.hist.position = c("left", "bottom")
+              )+ 
+        tm_layout(main.title = "",main.title.size = .85,
+                 frame=FALSE,
+                 legend.outside =TRUE,
+                 legend.height = .5,
+                 legend.hist.width = 2.5,
+                 legend.hist.height = .5)+
+        labs(x="Case rate", 
+             y="Frequency")
+        # tm_borders(col = "#CCCCCC", lwd = .025, lty = "solid", alpha = .8)
+Income
+# save interactive plot
+	tmap_save(Income, "C:/Users/HUAWEI/Desktop/Dissertation/Income.png",dpi=300)
+
+```
